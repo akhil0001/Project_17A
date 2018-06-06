@@ -1,0 +1,18 @@
+{
+  "name": "Project 17 A",
+  "version": "0.0.1",
+  "description": "This is a chrome extension that enhances the debugging scope of kony",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "kony",
+    "kony",
+    "sdk"
+  ],
+  "author": "Akhil sai ram",
+  "license": "MIT"
+}
