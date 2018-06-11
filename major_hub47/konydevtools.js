@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function checkIfKonyIsUsed ()
 {
     "use strict"
@@ -26,7 +25,6 @@ function checkIfKonyIsUsed ()
     }
 
     //chrome.extension.sendMessage(message,function(message){})
-=======
 // function checkIfKonyIsUsed ()
 // {
 //     "use strict"
@@ -49,7 +47,6 @@ function checkIfKonyIsUsed ()
 //     }
 
 //     chrome.extension.sendMessage(message,function(message){})
->>>>>>> 9abcaef8c209bcb928166ec33b49709eb52acfc9
         
 // }
 
