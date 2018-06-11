@@ -28,12 +28,19 @@ function do_something(msg) {
 
 // }
 
-chrome.devtools.inspectedWindow.eval(
-    "kony.globals.version",
-     function(result, isException) {
-       if (isException)
-         console.log("the page is not using jQuery");
-       else
-         document.body.textContent = result;
-     }
-);
+// chrome.devtools.inspectedWindow.eval(
+//     "kony.globals.version",
+//      function(result, isException) {
+//        if (isException)
+//          console.log("the page is not using jQuery");
+//        else
+//          document.body.textContent = result;
+//      }
+// );
+
+function amIAbletoAccessKonyVar()
+{
+  document.body.textContent = window.kony;
+  console.log(window);
+}
+//amIAbletoAccessKonyVar();
