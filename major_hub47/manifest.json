@@ -1,5 +1,5 @@
 {
-    "name": "Kony Debug",
+    "name": "Kony Devtools",
     "version": "1.0",
     "description": "Extends the developer tools adding a sidebar that displays the kony data associated with konydesktop web DOM element",
     "devtools_page": "konydevtools.html",

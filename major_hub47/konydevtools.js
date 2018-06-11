@@ -3,23 +3,28 @@ function checkIfKonyIsUsed ()
     "use strict"
     var konyDebug = window.kony;
     var infoTobeDisplayed = {};
-    var messsage =""
+    // var messsage =""
     if( !konyDebug){
-        //return { error: "Kony framework is not used. May be this is either in production mode or using it in iframe mode"}
-        message = { error: "Kony framework is not used. May be this is either in production mode or using it in iframe mode"}
+        return { error: "Kony framework is not used. May be this is either in production mode or using it in iframe mode"}
+        //message = { error: "Kony framework is not used. May be this is either in production mode or using it in iframe mode"}
     }
     else{
         var konyGlobals = konyDebug.globals;
-        infoTobeDisplayed['info'] = "Kony framework is used in this webpage";
+        infoTobeDisplayed['Info'] = "Kony framework is used in this webpage";
         // infoTobeDisplayed['globals'] = konyGlobals;
         infoTobeDisplayed['App Name'] = konyGlobals['appid']
         infoTobeDisplayed['Is this MVC'] = konyGlobals['isMVC']
         infoTobeDisplayed['Current Form'] = konyGlobals['__currentForm']['id']
-        message = infoTobeDisplayed;
-        //return infoTobeDisplayed;
+        let currentForm = konyGlobals['__currentForm']
+        infoTobeDisplayed[konyGlobals['__currentForm']['id']] = currentForm.children
+        for(let i=0; i<currentForm.children.length; i++){
+            infoTobeDisplayed[currentForm.children[i]] = konyGlobals['__currentForm'][currentForm.children[i]]['children'];
+        }
+        // message = infoTobeDisplayed;
+        return infoTobeDisplayed;
     }
 
-    chrome.extension.sendMessage(message,function(message){})
+    //chrome.extension.sendMessage(message,function(message){})
         
 }
 
@@ -30,7 +35,7 @@ chrome.devtools.panels.elements.createSidebarPane(
 function(sidebarpane){
     // sidebarpane.setpage('konydevtools.html')
     function updateElementProperties(){
-    //sidebarpane.setExpression("("+checkIfKonyIsUsed+")()");
+    sidebarpane.setExpression("("+checkIfKonyIsUsed+")()");
     //console.log($0);
 }
 updateElementProperties();
@@ -42,18 +47,18 @@ function handleShown()
 
 }
 
-chrome.devtools.panels.create("Friday" , 
-"icon.png",
-"panel.html",
-function(panel)
-{
-    panel.onShown.addListener(handleShown);
-    panel.onHidden.addListener(handleClosed);
-    //panel.setExpression("("+checkIfKonyIsUsed+")()");
-    checkIfKonyIsUsed()
-});
+// chrome.devtools.panels.create("Friday" , 
+// "icon.png",
+// "panel.html",
+// function(panel)
+// {
+//     panel.onShown.addListener(handleShown);
+//     panel.onHidden.addListener(handleClosed);
+//     //panel.setExpression("("+checkIfKonyIsUsed+")()");
+//     checkIfKonyIsUsed()
+// });
 
-function handleClosed()
-{
-    alert('This has been closed')
-}
+// function handleClosed()
+// {
+//     alert('This has been closed')
+// }
