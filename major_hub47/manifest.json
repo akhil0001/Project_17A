@@ -1,12 +1,14 @@
 {
-    "name": "Kony Debug",
+    "name": "Chitragupt",
     "version": "1.0",
-    "description": "Extends the developer tools adding a sidebar that displays the kony data associated with konydesktop web DOM element",
+    "description": "B.A.R.F",
     "devtools_page": "konydevtools.html",
     "background" : {
-        "scripts": ["background.js"],
-        "persistent": false
+        "scripts": ["background.js"]
     },
+    "icons": 
+        {"48":"knighticon.png"},
     "manifest_version": 2,
+    "permissions": ["activeTab"],
     "minimum_chrome_version": "10.0"
 }

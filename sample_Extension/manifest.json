@@ -1,0 +1,17 @@
+{
+  "name": "Sample Extension",
+  "version": "1.0",
+  "description": "Nothing mich",
+  "manifest_version": 2,
+  "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+  },
+  "permissions": ["activeTab","declarativeContent","storage"],
+  "page_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+          "48": "knighticon.png"
+      }
+  }
+}
