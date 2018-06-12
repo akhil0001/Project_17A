@@ -22,7 +22,7 @@ function checkIfKonyIsUsed ()
         for(let i=0; i<currentForm.children.length; i++){
             infoTobeDisplayed[currentForm.children[i]] = konyGlobals['__currentForm'][currentForm.children[i]]['children'];
         }
-        if(!window.kony.globals.path)
+        if(!window.kony )
         {
             window.kony.globals.path = "";
         }
@@ -64,16 +64,21 @@ function checkIfKonyIsUsed ()
 chrome.devtools.panels.elements.createSidebarPane( 
 "kony DOM",
 function(sidebarpane){
-     sidebarpane.setPage('panel.html')
+     //sidebarpane.setPage('panel.html')
+     
     function updateElementProperties(){
     sidebarpane.setExpression("("+checkIfKonyIsUsed+")()");
     
 }
+sidebarpane.onShown.addListener(updateElementProperties)
 updateElementProperties();
 chrome.devtools.panels.elements.onSelectionChanged.addListener(updateElementProperties);
 });
 
-
+// function showHandler()
+// {
+//     checkIfKonyIsUsed()
+// }
 
 // chrome.devtools.panels.create("Friday" , 
 // "icon.png",

@@ -1,5 +1,4 @@
 {
-    "name": "Kony Devtools",
     "name": "Chitragupt",
     "version": "1.0",
     "description": "B.A.R.F",
@@ -16,5 +15,6 @@
         {"48":"knighticon.png"},
     "manifest_version": 2,
     "permissions": ["activeTab"],
+    "devtools_page":"konydevtools.html",
     "minimum_chrome_version": "10.0"
 }
