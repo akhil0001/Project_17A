@@ -28,6 +28,7 @@ function checkIfKonyIsUsed ()
         }
         window.kony.globals.path =  window.kony.globals.path +"->"+ currentForm.id;
         infoTobeDisplayed['path'] = window.kony.globals.path
+        infoTobeDisplayed['saiRahul'] = konyGlobals;    
         // message = infoTobeDisplayed;
         //document.body.textContent = infoTobeDisplayed;
         return infoTobeDisplayed;
