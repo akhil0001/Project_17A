@@ -1,3 +1,6 @@
+/**
+ * Created by apesant on 27/07/16.
+ */
 (function () {
 
     var backgroundPageConnection = chrome.runtime.connect({
@@ -14,8 +17,8 @@
     // panel
     var panel = panels.create(
         "DevtoolsExtension",
-        "icon_ironman.png",
-        "panel.html", function () {
+        "res/icon.png",
+        "src/devtools_panel.html", function () {
             // Relay the tab ID to the background page
         }
     );
