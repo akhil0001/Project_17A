@@ -6,15 +6,23 @@
     "background" : {
         "scripts": ["background.js"]
     },
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["contentScript.js"]
-        }
-    ],
     "icons": 
         {"48":"knighticon.png"},
+    "browser_action": {
+        "default_icon": "knighticon_gray.png",
+        "default_popup": "popup.html",
+        "default": "Kony DevTools"
+    },
+    "content_scripts": [
+        {
+            "js": ["content_script.js"],
+            "run_at": "document_start",
+            "matches": ["<all_urls>"]
+        }
+    ],
     "manifest_version": 2,
-    "permissions": ["activeTab"],
-    "minimum_chrome_version": "10.0"
+    "permissions": ["activeTab","<all_urls>"],
+    "minimum_chrome_version": "10.0",
+    "devtools_page": "konydevtools.html",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
