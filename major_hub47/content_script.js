@@ -24,9 +24,21 @@
             // console.log('false');
             // });
             window.kony.getChildren = function(name){
+                var propertiesJSON ={};
+                var presentForm = konyGlobalsConstant.__currentForm;
+                propertiesJSON.width = presentForm.name.width;
+                propertiesJSON.height = presentForm.name.height;
+                propertiesJSON.top = presentForm.name.top;
+                propertiesJSON.left = presentForm.name.left;
+                propertiesJSON.centerX = presentForm.name.centerX;
+                propertiesJSON.centerY = presentForm.name.centerY;
+                propertiesJSON.children =  presentForm[name].children;
+                return propertiesJSON;
                 
-                return kony.globals.__currentForm[name].children;
             }
+            // window.kony.getProperties = function(name){
+
+            // }
             konion.currentForm = {};
             konion.appid = konyGlobalsConstant.appid;
             konion.apptitle = konyGlobalsConstant.apptitle;
